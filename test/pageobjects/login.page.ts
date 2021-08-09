@@ -11,6 +11,10 @@ class LoginPage {
     return $('#login-button');
   }
 
+  async open() {
+    await browser.url('/')
+  }
+
   async login(username: string, password: string) {
     await this.usernameInput.setValue(username);
     await this.passwordInput.setValue(password);

@@ -36,5 +36,8 @@ export const config: WebdriverIO.Config = {
         tsConfigPathsOpts: {
             baseUrl: './'
         }
+    },
+    beforeSuite: () => {
+        require('dotenv').config();
     }
 }
