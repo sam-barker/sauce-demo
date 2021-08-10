@@ -12,7 +12,7 @@ class LoginPage {
   }
 
   async open() {
-    await browser.url('/')
+    await browser.url('/');
   }
 
   async login(username: string, password: string) {
