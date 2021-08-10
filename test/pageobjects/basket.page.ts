@@ -7,6 +7,10 @@ class BasketPage {
     return $('button[data-test^="remove"]');
   }
 
+  get checkoutButton() {
+    return $('#checkout');
+  }
+
   async removeCheapestItem() {
     let items = await this.cartItems;
     expect(items.length).toEqual(2);
@@ -31,6 +35,12 @@ class BasketPage {
     // re-check our items
     items = await this.cartItems;
     expect(items.length).toEqual(1);
+  }
+
+  async checkout() {
+    const checkoutButton = await this.checkoutButton;
+    await checkoutButton.click();
+    expect(browser).toHaveUrlContaining('/checkout-step-one');
   }
 }
 

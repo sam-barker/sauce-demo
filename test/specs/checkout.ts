@@ -19,4 +19,8 @@ describe('Basic checkout flow', () => {
     await ProductsPage.openBasket();
     await BasketPage.removeCheapestItem();
   });
+
+  it('should be able to checkout', async () => {
+    await BasketPage.checkout();
+  });
 });
